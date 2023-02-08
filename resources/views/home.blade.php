@@ -2,20 +2,18 @@
 
 
 @section('main-content')
+
 <div class="container">
     <div class="row">
-        <div class="col-4">
-            <h2>questo è il main della home page</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eligendi consequuntur voluptatum optio autem ducimus reiciendis, ex odio aliquid magni delectus minima cupiditate tenetur deleniti voluptas harum voluptate nulla amet?</p>
+        @foreach($dccomics as $element)
+        <div class="col-2 p-4">
+            <img src="" alt="path">
+            <div class="description">
+                <h4>{{ $element->title}}</h4>
+                <p class="fs-5">{{ $element->price }}</p>
+            </div>
         </div>
-        <div class="col-4">
-            <h2>questo è il main della home page</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eligendi consequuntur voluptatum optio autem ducimus reiciendis, ex odio aliquid magni delectus minima cupiditate tenetur deleniti voluptas harum voluptate nulla amet?</p>
-        </div>
-        <div class="col-4">
-            <h2>questo è il main della home page</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eligendi consequuntur voluptatum optio autem ducimus reiciendis, ex odio aliquid magni delectus minima cupiditate tenetur deleniti voluptas harum voluptate nulla amet?</p>
-        </div>
+        @endforeach
     </div>
 </div>
 @endsection

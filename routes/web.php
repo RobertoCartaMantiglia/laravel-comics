@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
-});
+    $dccomics = config('comics.comicsList');
+
+    return view('home', compact('dccomics'));
+})->name('home');
+
+Route::get('/comics', function () {
+    $dccomics = config('comics.comicsList');
+    dd($dccomics);
+    return view('comics', compact("dccomics"));
+})->name('comics');
