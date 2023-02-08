@@ -21,6 +21,5 @@ Route::get('/', function () {
 
 Route::get('/comics', function () {
     $dccomics = config('comics.comicsList');
-    dd($dccomics);
-    return view('comics', compact("dccomics"));
+    return view('partials.comics', compact("dccomics"));
 })->name('comics');
